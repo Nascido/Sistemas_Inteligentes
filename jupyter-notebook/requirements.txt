@@ -1,0 +1,6 @@
+# A imagem scipy-notebook ja inclui, entre outros: NumPy, pandas, SciPy,
+# Matplotlib, seaborn, scikit-learn e statsmodels.
+#
+# Adicione abaixo um pacote por linha e execute:
+#   docker compose up -d --build
+

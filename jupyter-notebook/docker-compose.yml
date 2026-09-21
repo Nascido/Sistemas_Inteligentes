@@ -1,0 +1,25 @@
+services:
+  jupyter:
+    build:
+      context: .
+      args:
+        JUPYTER_IMAGE: quay.io/jupyter/scipy-notebook:2026-07-28
+    image: sistemas-inteligentes-jupyter:local
+    container_name: sistemas-inteligentes-jupyter
+    restart: unless-stopped
+    ports:
+      # Publica o Jupyter apenas na interface local da maquina.
+      - "127.0.0.1:8888:8888"
+    volumes:
+      # Tudo salvo em /home/jovyan/work persiste na pasta local notebooks/.
+      - ./notebooks:/home/jovyan/work
+    command:
+      - start-notebook.py
+      - --ServerApp.ip=0.0.0.0
+      - --ServerApp.port=8888
+      - --ServerApp.root_dir=/home/jovyan/work
+      - --IdentityProvider.token=
+      - --PasswordIdentityProvider.hashed_password=
+    security_opt:
+      - no-new-privileges:true
+
