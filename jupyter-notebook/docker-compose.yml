@@ -1,3 +1,5 @@
+name: sistemas-inteligentes
+
 services:
   jupyter:
     build:
@@ -22,4 +24,3 @@ services:
       - --PasswordIdentityProvider.hashed_password=
     security_opt:
       - no-new-privileges:true
-
