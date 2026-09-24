@@ -14,7 +14,7 @@ services:
       - "127.0.0.1:8888:8888"
     volumes:
       # Tudo salvo em /home/jovyan/work persiste na pasta local notebooks/.
-      - ./notebooks:/home/jovyan/work
+      - ./notebooks:/home/jovyan/work:Z
     command:
       - start-notebook.py
       - --ServerApp.ip=0.0.0.0
